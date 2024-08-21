@@ -104,7 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
     function handleHoverStart() {
       isHovered = true;
       cancelAnimationFrame(animationId); // Stop animation
-      // blogCards.forEach((c) => (c.style.opacity = "0.5")); // Make all cards colorless
       document
         .querySelectorAll(".blog-card, .blog-card.clone")
         .forEach((c) => (c.style.opacity = "0.5")); // Make all cards colorless
@@ -113,7 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function handleHoverEnd() {
       isHovered = false;
-      // blogCards.forEach((c) => (c.style.opacity = "0.5")); // Reset all cards to colorless
       document
         .querySelectorAll(".blog-card, .blog-card.clone")
         .forEach((c) => (c.style.opacity = "0.5")); // Reset all cards to colorless
@@ -122,6 +120,69 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document
       .querySelectorAll(".blog-card, .blog-card.clone")
+      .forEach((card) => {
+        card.addEventListener("mouseenter", handleHoverStart);
+        card.addEventListener("mouseleave", handleHoverEnd);
+      });
+  }
+
+  // Skills floating animation
+  const skillGrid = document.querySelector(".skill-grid");
+  const skillCards = document.querySelectorAll(".skill-card");
+
+  if (skillGrid && skillCards.length > 0) {
+    // Calculate the total width of all cards including margins
+    const totalWidth = Array.from(skillCards).reduce(
+      (sum, card) =>
+        sum + card.offsetWidth + parseFloat(getComputedStyle(card).marginRight),
+      0
+    );
+
+    // Clone cards to create a seamless loop
+    skillCards.forEach((card) => {
+      const clone = card.cloneNode(true);
+      clone.classList.add("clone");
+      skillGrid.appendChild(clone);
+    });
+
+    // Set up the animation
+    let animationId;
+    let position = 0;
+    let isHovered = false;
+
+    function animate() {
+      if (!isHovered) {
+        position -= 1; // Adjust speed if necessary
+        if (Math.abs(position) >= totalWidth) {
+          position = 0;
+        }
+        skillGrid.style.transform = `translateX(${position}px)`;
+        animationId = requestAnimationFrame(animate);
+      }
+    }
+
+    animate();
+
+    // Hover effect
+    function handleHoverStart() {
+      isHovered = true;
+      cancelAnimationFrame(animationId); // Stop animation
+      document
+        .querySelectorAll(".skill-card, .skill-card.clone")
+        .forEach((c) => (c.style.opacity = "0.5")); // Make all icons colorless
+      this.style.opacity = "1"; // Highlight hovered icon
+    }
+
+    function handleHoverEnd() {
+      isHovered = false;
+      document
+        .querySelectorAll(".skill-card, .skill-card.clone")
+        .forEach((c) => (c.style.opacity = "0.5")); // Reset all icons to colorless
+      animate(); // Restart animation
+    }
+
+    document
+      .querySelectorAll(".skill-card, .skill-card.clone")
       .forEach((card) => {
         card.addEventListener("mouseenter", handleHoverStart);
         card.addEventListener("mouseleave", handleHoverEnd);

@@ -1,344 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>razakPortfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="icon" type="image/svg+xml" href="./assets/fevicon.svg" />
-  </head>
-  <body class="dark-mode">
-    <header>
-      <nav>
-        <a href="#hero" class="logo">razak<span class="blue">Attar</span></a>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#techblogs">Blogs</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li>
-            <button id="theme-toggle"><i class="fas fa-sun"></i></button>
-          </li>
-        </ul>
-        <div class="burger">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>razakPortfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" type="image/svg+xml" href="./assets/fevicon.svg" />
+</head>
+
+<body class="dark-mode">
+  <header>
+    <nav>
+      <a href="#hero" class="logo">razak<span class="blue">Attar</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#techblogs">Blogs</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <button id="theme-toggle"><i class="fas fa-sun"></i></button>
+        </li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero">
+      <div class="hero-content">
+        <img src="./assets/pic.jpg" alt="Abdulrazak Attar" class="profile-photo" />
+        <h1>Abdulrazak Attar</h1>
+        <p>Software Engineer | Full Stack Developer</p>
+        <a href="./assets/razak_resume_v2.pdf" class="cta-button" download="razak_resume.pdf">Download CV</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>AboutMyself</h2>
+      <p>
+        Highly motivated and quick-learning Software Engineer with 2.5 years
+        of experience in fullstack development. Proven ability to write clean,
+        maintainable code and excel in both teamwork and independent projects.
+        Possesses strong leadership and problem-solving skills.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Tech<span class="blue">Stack</span> </h2>
+      <h4>Equipped with below <span class="blue">TOOLS <span style="color: white;">AND</span> SKILLS</span></h4>
+      <div class="skills-container">
+        <div class="skill-grid">
+          <!-- Example Skill Icons -->
+          <div class="skill-card">
+            <img src="assets/html.png" alt="html" />
+            <h4>HTML</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/css.png" alt="css" />
+            <h4>CSS</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/js.png" alt="js" />
+            <h4>JavaScript</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/ts.png" alt="ts" />
+            <h4>TypeScript</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/tailwind.png" alt="tailwind" />
+            <h4>Tailwind CSS</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/react.png" alt="react.js" />
+            <h4>React</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/react-query.png" alt="react-query" />
+            <h4>React Query</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/redux.svg" alt="rtk" />
+            <h4>Redux Toolkit</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/react-router.png" alt="react-router" />
+            <h4>React Router</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/rhf.png " alt="rhf" />
+            <h4>RHF</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/node.png" alt="node.js" />
+            <h4>NodeJS</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/express.png" alt="express.js" />
+            <h4>Express</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/mongodb.png" alt="mongodb" />
+            <h4>MongoDB</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/appwrite.png" alt="appwrite" />
+            <h4>Appwrite</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/mongoose.png" alt="mongoose" />
+            <h4>Mongoose</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/angular.png" alt="angular" />
+            <h4>Angular</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/java.png" alt="java" />
+            <h4>JAVA</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/git.png" alt="git" />
+            <h4>Git</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/github-logo.png" alt="gitHub" />
+            <h4>GitHub</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/gitLab.png" alt="gitLab" />
+            <h4>GitLab</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/vite.png" alt="vite" />
+            <h4>Vite.js</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/vscode.png" alt="vscode" />
+            <h4>VS Code</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/postman.png" alt="postman" />
+            <h4>Postman</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/thunder-client.Default" alt="thunder-client" />
+            <h4>Thunder Client</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/jira.png" alt="jira" />
+            <h4>Jira</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/intellij.png" alt="IntelliJ" />
+            <h4>IntelliJ IDEA</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/eclipse.png" alt="eclipse" />
+            <h4>Eclipse</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/sublime.png" alt="sublime" />
+            <h4>Sublime</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/swagger.png" alt="swagger" />
+            <h4>Swagger</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/auth0.webp" alt="auth0" />
+            <h4>Auth0</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/npm.png" alt="npm" />
+            <h4>NPM</h4>
+          </div>
+          <div class="skill-card">
+            <img src="assets/sapcx.png" alt="sapcx" />
+            <h4>SAP CX</h4>
+          </div>
+          <!-- //add here -->
         </div>
-      </nav>
-    </header>
+      </div>
+    </section>
 
-    <main>
-      <section id="hero">
-        <div class="hero-content">
-          <img
-            src="./assets/pic.jpg"
-            alt="Abdulrazak Attar"
-            class="profile-photo"
-          />
-          <h1>Abdulrazak Attar</h1>
-          <p>Software Engineer | Full Stack Developer</p>
-          <a
-            href="./assets/razak_resume_v2.pdf"
-            class="cta-button"
-            download="razak_resume.pdf"
-            >Download CV</a
-          >
-        </div>
-      </section>
-
-      <section id="about">
-        <h2>AboutMyself</h2>
-        <p>
-          Highly motivated and quick-learning Software Engineer with 2.5 years
-          of experience in fullstack development. Proven ability to write clean,
-          maintainable code and excel in both teamwork and independent projects.
-          Possesses strong leadership and problem-solving skills.
-        </p>
-      </section>
-
-      <section id="skills">
-        <h2>Tech<span class="blue" >Skills</span></h2>
-        <div class="skills-container">
-          <div class="skill-category">
-            <h3>Frontend</h3>
-            <ul>
-              <li>JavaScript</li>
-              <li>TypeScript</li>
-              <li>React.js</li>
-              <li>Redux Toolkit</li>
-              <li>RTK Query</li>
-              <li>React Query</li>
-              <li>React Hook Form</li>
-              <li>React Router DOM</li>
-              <li>Tailwind CSS</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Backend</h3>
-            <ul>
-              <li>Node.js</li>
-              <li>Express.js</li>
-              <li>Restful APIs</li>
-              <li>Appwrite Services</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Database</h3>
-            <ul>
-              <li>MongoDB (Mongoose)</li>
-              <li>Appwrite (BAAS)</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Tools</h3>
-            <ul>
-              <li>VS Code</li>
-              <li>Eclipse IDE</li>
-              <li>IntelliJ IDEA</li>
-              <li>Postman</li>
-              <li>Thunder Client</li>
-              <li>Git</li>
-              <li>GitHub</li>
-              <li>GitLab</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Other</h3>
-            <ul>
-              <li>SAP Commerce Cloud (Hybris)</li>
-              <li>SAP Spartacus</li>
-              <li>SAP Emarsys Cloud</li>
-              <li>SAP Customer Data Cloud</li>
-              <li>SAP Sales Cloud</li>
-              <li>Angular</li>
-              <li>Core JAVA</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects">
-        <h2>RecentWork</h2>
-        <div class="project-grid">
-          <div class="project-card">
-            <h3>The Movies Vault (MERN)</h3>
-            <p>
-              Scalable movie application using Redux Toolkit with RTK query,
-              user authentication, CRUD operations, filtering by interests,
-              movie browsing, user reviews, profile management, admin dashboard
-              and real-time subscriber count.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/razak571/tmvMovies" target="_blank"
-                >GitHub</a
-              >
-              <a href="https://tmv-movies.onrender.com/" target="_blank"
-                >Live Demo</a
-              >
-            </div>
-          </div>
-          <div class="project-card">
-            <h3>TURBO-GPT (MERN)</h3>
-            <p>
-              Scalable real-time AI chat application using Material UI,
-              ContextAPI, OpenAI API with secure authentication and user chat
-              history management.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/razak571/turboGPT" target="_blank"
-                >GitHub</a
-              >
-              <a href="https://turbogpt.onrender.com/" target="_blank"
-                >Live Demo</a
-              >
-            </div>
-          </div>
-          <div class="project-card">
-            <h3>Tomato (MERN)</h3>
-            <p>
-              Fullstack food delivery application with separate admin and client
-              interfaces, order management, food item management, secure
-              checkout and Stripe integration for payments.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/razak571/tomato" target="_blank"
-                >GitHub</a
-              >
-              <a href="https://tomato-rf7b.onrender.com/" target="_blank"
-                >Live Demo</a
-              >
-            </div>
-          </div>
-          <div class="project-card">
-            <h3>BlogBytes (React.js, Appwrite)</h3>
-            <p>
-              Fullstack Blog site with user authentication, post CRUD
-              operations, redux, react query, rich text editor and scalable
-              backend services.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/razak571/BlogBytes" target="_blank"
-                >GitHub</a
-              >
-              <a
-                href="https://appwrite-react-blogsite.vercel.app/"
-                target="_blank"
-                >Live Demo</a
-              >
-            </div>
-          </div>
-          <div class="project-card">
-            <h3>Bookstore (MERN)</h3>
-            <p>
-              Simple bookstore application with CRUD operations for managing
-              book entries in table and card views.
-            </p>
-            <div class="project-links">
-              <a
-                href="https://github.com/razak571/bookstore-mern-app"
-                target="_blank"
-                >GitHub</a
-              >
-              <a href="https://bookstore-7gtz.onrender.com/" target="_blank"
-                >Live Demo</a
-              >
-            </div>
-          </div>
-          <div class="project-card">
-            <h3>Weather App (React.js)</h3>
-            <p>
-              Weather application fetching live weather information using react
-              query based on city searches with an open-source API.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/razak571/weather-app" target="_blank"
-                >GitHub</a
-              >
-              <a
-                href="https://weather-app-razak-attars-projects.vercel.app/"
-                target="_blank"
-                >Live Demo</a
-              >
-            </div>
+    <section id="projects">
+      <h2>RecentWork</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>The Movies Vault (MERN)</h3>
+          <p>
+            Scalable movie application using Redux Toolkit with RTK query,
+            user authentication, CRUD operations, filtering by interests,
+            movie browsing, user reviews, profile management, admin dashboard
+            and real-time subscriber count.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/razak571/tmvMovies" target="_blank">GitHub</a>
+            <a href="https://tmv-movies.onrender.com/" target="_blank">Live Demo</a>
           </div>
         </div>
-      </section>
-
-      <section id="techblogs">
-        <h2>Tech<span class="blue" >Blogs</span></h2>
-        <div class="blog-container">
-          <div class="blog-grid">
-            <!-- Example blog card (repeat this structure for each blog post) -->
-            <div class="blog-card">
-              <img src="assets/rtk-react.png" alt="Blog post title">
-              <h3>Redux Toolkit</h3>
-              <p>Simplifies state management in React and other JavaScript applications using Redux</p>
-              <a href="https://www.linkedin.com/posts/razakattar_redux-toolkit-activity-7196320929575038976-gDsD?utm_source=share&utm_medium=member_desktop" class="cta-button" target="_blank">Read More</a>
-            </div>
-            <div class="blog-card">
-              <img src="assets/router.png" alt="Blog post title">
-              <h3>React Router Dom</h3>
-              <p>Create dynamic, single-page applications with seamless navigation and intuitive routing</p>
-              <a href="https://www.linkedin.com/feed/update/urn:li:activity:7188363281101717504?utm_source=share&utm_medium=member_desktop" target="_blank" class="cta-button">Read More</a>
-            </div>
-            <div class="blog-card">
-              <img src="assets/context-api.jfif" alt="Blog post title">
-              <h3>React ContextAPI</h3>
-              <p>State management by enabling data share across component tree, bye-bye Prop-Drilling</p>
-              <a href="https://www.linkedin.com/feed/update/urn:li:activity:7189612296157954048?utm_source=share&utm_medium=member_desktop" target="_blank" class="cta-button">Read More</a>
-            </div>
-            <div class="blog-card">
-              <img src="assets/state-propagation.JPG" alt="Blog post title">
-              <h3>State Propagation in React.js</h3>
-              <p>React will react when state changes, know the state propagation in detail here</p>
-              <a href="https://www.linkedin.com/feed/update/urn:li:activity:7187281462386196480?utm_source=share&utm_medium=member_desktop" target="_blank" class="cta-button">Read More</a>
-            </div>
-            <div class="blog-card">
-              <img src="assets/lexical-scopes.JPG" alt="Blog post title">
-              <h3>Lexical Scope and Closures in JS</h3>
-              <p>Enhances function behavior by managing variable access and memory efficiently in JS</p>
-              <a href="https://www.linkedin.com/feed/update/urn:li:activity:7185109179118813185?utm_source=share&utm_medium=member_desktop" target="_blank" class="cta-button">Read More</a>
-            </div>
-            <!-- Add more blog cards as needed -->
+        <div class="project-card">
+          <h3>TURBO-GPT (MERN)</h3>
+          <p>
+            Scalable real-time AI chat application using Material UI,
+            ContextAPI, OpenAI API with secure authentication and user chat
+            history management.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/razak571/turboGPT" target="_blank">GitHub</a>
+            <a href="https://turbogpt.onrender.com/" target="_blank">Live Demo</a>
           </div>
         </div>
-      </section>
-
-      <section id="experience">
-        <h2>Work Experience</h2>
-        <div class="experience-item">
-          <h3>Software Engineer - @msg global solutions</h3>
-          <p class="experience-date">January 2022 - June 2024</p>
-          <ul>
-            <li>
-              Developed fullstack functionalities for SAP Financial Services
-              Accelerator (E-commerce solution) using SAP Commerce Cloud
-              (backend) and SAP Spartacus (Angular frontend).
-            </li>
-            <li>
-              Successfully migrated client's marketing tool to SAP Emarsys
-              Cloud, automating workflows with automation programs and
-              integrating with various APIs for contact management, email
-              campaigns and more.
-            </li>
-            <li>
-              Implemented functionalities for Health & Pet Products, renters'
-              claims, Savings changes, Travel chatbot, and ESG data capture.
-            </li>
-          </ul>
+        <div class="project-card">
+          <h3>Tomato (MERN)</h3>
+          <p>
+            Fullstack food delivery application with separate admin and client
+            interfaces, order management, food item management, secure
+            checkout and Stripe integration for payments.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/razak571/tomato" target="_blank">GitHub</a>
+            <a href="https://tomato-rf7b.onrender.com/" target="_blank">Live Demo</a>
+          </div>
         </div>
-      </section>
+        <div class="project-card">
+          <h3>BlogBytes (React.js, Appwrite)</h3>
+          <p>
+            Fullstack Blog site with user authentication, post CRUD
+            operations, redux, react query, rich text editor and scalable
+            backend services.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/razak571/BlogBytes" target="_blank">GitHub</a>
+            <a href="https://appwrite-react-blogsite.vercel.app/" target="_blank">Live Demo</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>Bookstore (MERN)</h3>
+          <p>
+            Simple bookstore application with CRUD operations for managing
+            book entries in table and card views.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/razak571/bookstore-mern-app" target="_blank">GitHub</a>
+            <a href="https://bookstore-7gtz.onrender.com/" target="_blank">Live Demo</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>Weather App (React.js)</h3>
+          <p>
+            Weather application fetching live weather information using react
+            query based on city searches with an open-source API.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/razak571/weather-app" target="_blank">GitHub</a>
+            <a href="https://weather-app-razak-attars-projects.vercel.app/" target="_blank">Live Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section id="education">
-        <h2>Education</h2>
+    <section id="techblogs">
+      <h2>Tech<span class="blue">Blogs</span></h2>
+      <div class="blog-container">
+        <div class="blog-grid">
+          <!-- Example blog card (repeat this structure for each blog post) -->
+          <div class="blog-card">
+            <img src="assets/rtk-react.png" alt="Blog post title">
+            <h3>Redux Toolkit</h3>
+            <p>Simplifies state management in React and other JavaScript applications using Redux</p>
+            <a href="https://www.linkedin.com/posts/razakattar_redux-toolkit-activity-7196320929575038976-gDsD?utm_source=share&utm_medium=member_desktop"
+              class="cta-button" target="_blank">Read More</a>
+          </div>
+          <div class="blog-card">
+            <img src="assets/router.png" alt="Blog post title">
+            <h3>React Router Dom</h3>
+            <p>Create dynamic, single-page applications with seamless navigation and intuitive routing</p>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7188363281101717504?utm_source=share&utm_medium=member_desktop"
+              target="_blank" class="cta-button">Read More</a>
+          </div>
+          <div class="blog-card">
+            <img src="assets/context-api.jfif" alt="Blog post title">
+            <h3>React ContextAPI</h3>
+            <p>State management by enabling data share across component tree, bye-bye Prop-Drilling</p>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7189612296157954048?utm_source=share&utm_medium=member_desktop"
+              target="_blank" class="cta-button">Read More</a>
+          </div>
+          <div class="blog-card">
+            <img src="assets/state-propagation.JPG" alt="Blog post title">
+            <h3>State Propagation in React.js</h3>
+            <p>React will react when state changes, know the state propagation in detail here</p>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7187281462386196480?utm_source=share&utm_medium=member_desktop"
+              target="_blank" class="cta-button">Read More</a>
+          </div>
+          <div class="blog-card">
+            <img src="assets/lexical-scopes.JPG" alt="Blog post title">
+            <h3>Lexical Scope and Closures in JS</h3>
+            <p>Enhances function behavior by managing variable access and memory efficiently in JS</p>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7185109179118813185?utm_source=share&utm_medium=member_desktop"
+              target="_blank" class="cta-button">Read More</a>
+          </div>
+          <!-- Add more blog cards as needed -->
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Work Experience</h2>
+      <div class="experience-item">
+        <h3>Software Engineer - @msg global solutions</h3>
+        <p class="experience-date">January 2022 - June 2024</p>
         <ul>
           <li>
-            <h3>BE, Electricals & Electronics Engineering</h3>
-            <p>SIET Engineering College</p>
+            Developed fullstack functionalities for SAP Financial Services
+            Accelerator (E-commerce solution) using SAP Commerce Cloud
+            (backend) and SAP Spartacus (Angular frontend).
           </li>
           <li>
-            <h3>12th, Science</h3>
-            <p>PDJ PU College</p>
+            Successfully migrated client's marketing tool to SAP Emarsys
+            Cloud, automating workflows with automation programs and
+            integrating with various APIs for contact management, email
+            campaigns and more.
           </li>
           <li>
-            <h3>10th</h3>
-            <p>PDJ High School</p>
+            Implemented functionalities for Health & Pet Products, renters'
+            claims, Savings changes, Travel chatbot, and ESG data capture.
           </li>
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <section id="contact">
-        <h2>Contact Me</h2>
-        <div class="contact-info">
-          <p>Email: razakat0221@gmail.com</p>
-          <p>Phone: +918123845567</p>
-          <h3>Follow Me</h3>
-          <div class="social-links">
-            <a href="https://github.com/razak571" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
-            <a href="https://www.linkedin.com/in/razakattar/" target="_blank"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-            <a href="https://discordapp.com/users/mern_dev/" target="_blank"
-              ><i class="fab fa-discord"></i
-            ></a>
-          </div>
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li>
+          <h3>BE, Electricals & Electronics Engineering</h3>
+          <p>SIET Engineering College</p>
+        </li>
+        <li>
+          <h3>12th, Science</h3>
+          <p>PDJ PU College</p>
+        </li>
+        <li>
+          <h3>10th</h3>
+          <p>PDJ High School</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <div class="contact-info">
+        <p>Email: razakat0221@gmail.com</p>
+        <p>Phone: +918123845567</p>
+        <h3>Follow Me</h3>
+        <div class="social-links">
+          <a href="https://github.com/razak571" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/razakattar/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://discordapp.com/users/mern_dev/" target="_blank"><i class="fab fa-discord"></i></a>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <footer>
-      <p>&copy; 2024 Abdulrazak Attar. All rights reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+  <footer>
+    <p>&copy; 2024 Abdulrazak Attar. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
 </html>

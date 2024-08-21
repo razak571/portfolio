@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sankofa+Display&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 :root {
   --primary-color: #2c3e50;
   --secondary-color: #3498db;
@@ -160,7 +161,7 @@ h2 {
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
-   transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .cta-button:hover {
@@ -168,11 +169,7 @@ h2 {
   transform: translateY(-3px);
 }
 
-.skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+
 
 .skill-category {
   flex-basis: calc(33.333% - 20px);
@@ -300,6 +297,7 @@ footer {
       opacity: 0;
       transform: translateX(50px);
     }
+
     to {
       opacity: 1;
       transform: translateX(0px);
@@ -363,14 +361,18 @@ footer {
   }
 }
 
- #techblogs {
-  overflow: visible; /* Ensure the section itself is not clipping */
+#techblogs {
+  overflow: visible;
+  /* Ensure the section itself is not clipping */
 }
 
 .blog-container {
-  overflow: hidden; /* Hide overflow for the card wrapper */
-  position: relative; /* Ensure correct positioning of child elements */
+  overflow: hidden;
+  /* Hide overflow for the card wrapper */
+  position: relative;
+  /* Ensure correct positioning of child elements */
 }
+
 .blog-grid {
   display: flex;
   padding: 20px 0;
@@ -385,8 +387,9 @@ footer {
   margin-right: 20px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease,    opacity 0.3s ease;
-  opacity: 0.5; /* Start with colorless cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  opacity: 0.5;
+  /* Start with colorless cards */
 }
 
 .blog-card:hover {
@@ -402,7 +405,8 @@ footer {
   border-radius: 5px;
   margin-bottom: 10px;
   filter: grayscale(100%);
-  transition: filter 0.3s ease; /* Smooth transition */
+  transition: filter 0.3s ease;
+  /* Smooth transition */
 }
 
 .blog-card:hover img {
@@ -427,5 +431,71 @@ footer {
 @media screen and (max-width: 768px) {
   .blog-card {
     flex: 0 0 250px;
+  }
+}
+
+/* Skills Section */
+
+.skills-container {
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; */
+  overflow: hidden;
+  /* Hide overflow for the card wrapper */
+  position: relative;
+  /* Ensure correct positioning of child elements */
+}
+
+.skill-grid {
+  display: flex;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  animation: skillsScroll 20s linear infinite;
+}
+
+.skill-card {
+  flex: 0 0 auto;
+  width: 100px;
+  margin-right: 15px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 0.5;
+  /* Start with colorless icons */
+  animation: fadeIn 0.5s ease-in forwards, fadeOut 0.5s ease-out 0.5s forwards;
+}
+
+.skill-card:hover {
+  cursor: pointer;
+  opacity: 1;
+  /* Highlight the hovered icon */
+}
+
+.skill-card img {
+  width: 50px;
+  /* Adjust the size of the icons as needed */
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.skill-card:hover img {
+  filter: grayscale(0%);
+  /* Remove grayscale on hover */
+}
+
+.skill-card h4 {
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+  .skill-card {
+    width: 80px;
+    /* Adjust for smaller screens */
+    margin-right: 10px;
+    /* Adjust for smaller screens */
   }
 }
