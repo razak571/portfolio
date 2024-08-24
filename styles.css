@@ -25,11 +25,11 @@ body {
 }
 
 body.dark-mode {
-  --primary-color: #2c3e50;
+  --primary-color: #04071d;
   --secondary-color: #2980b9;
   --text-color: #ecf0f1;
-  --background-color: #2c3e50;
-  --card-background: #34495e;
+  --background-color: #04071d;
+  --card-background: #34496e;
   --heading-color: #ecf0f1;
 }
 
@@ -60,7 +60,11 @@ nav {
 }
 
 .blue {
-  color: #3498db;
+  color: blue;
+}
+
+.dark-blue {
+  color: #000319;
 }
 
 .nav-links {
@@ -100,6 +104,15 @@ nav {
   transition: all 0.3s ease;
 }
 
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
 #theme-toggle {
   background: none;
   border: none;
@@ -136,7 +149,7 @@ h3 {
 }
 
 h2 {
-  border-bottom: 2px solid var(--secondary-color);
+  border-bottom: 2px solid blue;
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
@@ -144,6 +157,9 @@ h2 {
 .hero-content {
   text-align: center;
   padding: 4rem 0;
+}
+.hero-content p {
+  margin-bottom: 50px;
 }
 
 .hero-profile-photo {
@@ -157,22 +173,60 @@ h2 {
 
 .profile-photo:hover {
   transform: scale(1.05);
+  cursor: pointer;
 }
 
 .cta-button {
-  display: inline-block;
-  background-color: var(--secondary-color);
+  /* display: inline-block; */
+  background-color: var(--background-color);
   color: #fff;
   padding: 10px 20px;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  text-align: center;
 }
 
-.cta-button:hover {
-  background-color: #2980b9;
-  transform: translateY(-3px);
+
+
+
+
+
+
+.cta-button::after, .cta-button::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  background-image: conic-gradient(from  var(--angle),#fff, blue);
+
+top: 50%;
+left : 50%; translate: -50% -50%;
+z-index: -1;
+padding: 3px;
+border-radius: 10px;
+animation: 5s spin linear infinite;
 }
+
+.cta-button::before{
+  filter: blur(1.5rem);
+  opacity: 0.2;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+
+}
+
+
+
 
 
 
@@ -337,9 +391,9 @@ footer {
     padding: 1rem;
   }
 
-  .hero-content {
+  /* .hero-content {
     padding: 2rem 0;
-  }
+  } */
 
   .profile-photo {
     width: 150px;
@@ -549,36 +603,28 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
+  /* border: 3px solid red; */
 
 }
 
-/* .info-item {
-  position: relative;
-  background-color: var(--card-background);
-  border-radius: 10px;
-  padding: 40px 20px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden; 
-  z-index: 1; 
-  border: 1px solid green;
-} */
+
 
 .info-item {
+  margin-right: 5px;
+  margin-left: 5px;
   position: relative;
-  background-color: var(--card-background);
+  /* background-color: var(--card-background); */
+  background: #1c1f2b;
   border-radius: 10px;
   padding: 40px 20px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Ensure the border animation doesn't overflow */
-  z-index: 1; /* Ensure content is above the animated border */
-  border: 2px solid #3498db  ;
 }
 
 .info-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  /* transform: translateY(-5px); */
+  cursor: pointer;
+  box-shadow: 0 6px 12px silver;
 }
 
 .info-item img {
@@ -595,19 +641,47 @@ footer {
   margin: 0;
 }
 
+.info-item::after, .info-item::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from calc(var(--angle) + var(--start-angle)),transparent,#fff, #04071d);
+  top: 50%;
+  left : 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+border-radius: 10px;
+animation: 6s spin linear infinite;
+}
+
+.info-item::before{
+  filter: blur(1.5rem);
+  opacity: 0.2;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+
+}
+
+
 .cta-button {
   position: relative;
   z-index: 1;
 }
-
-
 
 @media screen and (max-width: 768px) {
   .about-container {
     flex-direction: column;
     text-align: center;
   }
-
 
   .about-content {
     flex-basis: auto;
@@ -620,5 +694,200 @@ footer {
   .about-info {
     grid-template-columns: 1fr;
   }
+}
+
+.test {
+  position: relative;
+  background: #000;
+  width: 300px;
+  margin: 50px;
+  font-size: 16px;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  /* border: 3px solid red; */
+}
+
+.test::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  translate: -50% -50%;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  background: conic-gradient(
+    from 0deg,
+    #ff5f6d,
+    #ffc371,
+    #ffd700,
+    #32cd32,
+    #00fa9a,
+    #1e90ff,
+    #9370db,
+    #ff5f6d
+  );
+} 
+
+.test::before {
+  filter: blur(1.5rem);
+  opacity: 0.8;
+}
+
+@keyframes rotate{
+  from {
+    --direction: 0deg;
+  }
+  to {
+    --direction: 360deg;
+  }
+}
+
+.card {
+  margin: 0 auto;
+  padding: 2rem;
+  width: 300px;
+  background: #1c1f2b;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card::after, .card::before {
+  /* --angle: 0deg; */
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+
+  /* background-image: conic-gradient(from var(--angle), transparent 70%, blue); */
+
+  background-image: conic-gradient(from var(--angle), transparent 95%, silver);
+
+ /* background-image:  conic-gradient(from var(--angle), 
+ transparent 90%, #ff4545, #00ff99, #006aff, #ff0095, #ff4545); */
+
+ /* background-image:  conic-gradient(from var(--angle), 
+  #ff4545, #00ff99, #006aff, #ff0095, #ff4545); */
+
+
+  top: 50%;
+  left : 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+border-radius: 10px;
+animation: 3s spin linear infinite;
+}
+
+.card::before{
+  filter: blur(1.5rem);
+  /* opacity: 0.5; */
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
+
+
+.info-item-person {
+  margin-right: 5px;
+  margin-left: 5px;
+  position: relative;
+  /* background-color: var(--card-background); */
+  background: #1c1f2b;
+  border-radius: 10px;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* --start-angle: 0deg; */
+}
+
+.info-item-person:hover {
+  /* transform: translateY(-3px); */
+  cursor: pointer;
+  box-shadow: 0 6px 12px silver;
+}
+
+.info-item-person img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+
+.info-item-person h3 {
+  margin-bottom: 5px;
+}
+
+.info-item-person p {
+  margin: 0;
+}
+
+
+
+.info-item-person::after, .info-item-person::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+
+  /* background-image: conic-gradient(from var(--angle), transparent 85%, #3498db); */
+
+  background-image: conic-gradient(from calc(var(--angle) + var(--start-angle)),transparent,#fff, #04071d);
+
+  /* background-image: conic-gradient(from var(--angle),transparent,#fff, #04071d); */
+
+  /* background-image: conic-gradient(from  calc(var(--angle) + var(--start-angle)),  transparent,#3498db); */
+
+
+
+  /* background-image: conic-gradient(from calc(var(--angle) + var(--start-angle)), transparent 95%, #fff, #3498db); */
+
+ /* background-image:  conic-gradient(from var(--angle), 
+ transparent 90%, #ff4545, #00ff99, #006aff, #ff0095, #ff4545); */
+
+ /* background-image:  conic-gradient(from var(--angle), 
+  #ff4545, #00ff99, #006aff, #ff0095, #ff4545); */
+
+
+  top: 50%;
+  left : 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+border-radius: 10px;
+animation: 6s spin linear infinite;
+}
+
+.info-item-person::before{
+  filter: blur(1.5rem);
+  opacity: 0.2;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+
 }
 

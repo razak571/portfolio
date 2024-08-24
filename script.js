@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const burger = document.querySelector(".burger");
   const nav = document.querySelector(".nav-links");
   const navLinks = document.querySelectorAll(".nav-links li");
-  const themeToggle = document.getElementById("theme-toggle");
+  // const themeToggle = document.getElementById("theme-toggle");
   const body = document.body;
 
   const toggleNav = () => {
@@ -28,9 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  themeToggle.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
-  });
+  // themeToggle.addEventListener("click", () => {
+  //   body.classList.toggle("dark-mode");
+  // });
 
   // Smooth scrolling for navigation links
   const scrollLinks = document.querySelectorAll("nav a");
