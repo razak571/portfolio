@@ -40,7 +40,7 @@
         <img src="./assets/pic.jpg" alt="abdulrazak-attar" class="hero-profile-photo" />
         <h1>Ready to take your digital presence to the next level?</h1>
         <p>Reach out to me today and let's discuss how I can help you achieve your goals </p>
-        <a href="./assets/razak_resume_v2.pdf" class="cta-button" download="razak_resume.pdf">Copy My Email</a>
+        <a href="#" class="cta-button" id="copyEmailBtn">Copy My Email</a>
       </div>
     </section>
 
@@ -49,26 +49,15 @@
       <div class="about-container">
         <div class="about-image">
           <img src="./assets/pic.jpg" alt="abdulrazak-attar" class="profile-photo" />
-          <!-- <div> -->
           <h1>Hi! I'm Razak, a full stack Web Developer based in INDIA</h1>
-
-
           <p>Transforming Concepts into Seamless User Experiences with My Excellent <a href="#skills"><span
                 style="color: #3498db ; font-weight: bolder; border-bottom: 1px solid  orangered; border-width: medium;">TechStack</span></a>
             Lets <a href="#contact"> <span class="blue"
                 style="border-bottom:  1px solid orangered; border-width:  thick; color: #3498db;">Connect</span></a>
             and transform an
             idea into an action</p>
-
-
-          <!-- <a style="display: block; border: 1px solid blue; border-radius: 10px; text-align: center; padding: 10px; color: white; " href="./assets/razak_resume_v2.pdf" class=""
-            download="razak_resume.pdf">HIRE ME</a> -->
-
-          <a style="display: block; border: 1px solid blue; border-radius: 10px; text-align: center; padding: 10px; color: white; "
+          <a class="btn"
             href="#contact" class="">CONNTECT WITH ME</a>
-
-
-          <!-- </div> -->
         </div>
 
         <div class="about-content">
@@ -91,8 +80,6 @@
               <p>I have expertise in creating visually appealing designs.</p>
             </div>
           </div>
-          <!-- <div class="about-info"> -->
-
           <h1 style="text-align: center; ">YOU MAY WANT TO
             KNOW THESE</h1>
           <div class="about-info">
@@ -380,7 +367,8 @@
     </section>
 
     <section id="experience">
-      <h2>Work Experience</h2>
+      <h2>Work<span class="blue" >EXP</span></h2>
+      <h3 style="border-bottom:  1px solid orangered; border-width: thick; display: inline-block;" >Take a look at <span class="blue" >TESTIMONIALS</span> from my COLLEAGUES  and CLIENTS with My Previous <span class="blue" >WORK RECORD</span></h3>
       <div class="experience-item">
         <h3>Software Engineer - @msg global solutions</h3>
         <p class="experience-date">January 2022 - June 2024</p>
@@ -409,52 +397,48 @@
         standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
         a type specimen book. It has survived
       </div>
-      <div class="card">
+
+      
+
+
+      <!-- black silver card -->
+      <!-- <div class="card">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
         standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
         a type specimen book. It has survived
-      </div>
+      </div> -->
     </section>
-
     <section id="contact">
       <h2>Connect<span class="blue">ME</span></h2>
-      <div class="card">
+      <div style="margin-top: 60px;" class="card">
         <h1>LETS CONNECT</h1>
-        <!-- <p>Email: razakattar0221@gmail.com</p> -->
-
- <!-- <h3>Follow Me</h3> -->
         <div class="social-links">
           <a href="https://github.com/razak571" target="_blank"><i class="fab fa-github"></i></a>
           <a href="https://www.linkedin.com/in/razakattar/" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://discordapp.com/users/mern_dev/" target="_blank"><i class="fab fa-discord"></i></a>
         </div>
-        <div class="email-mobile" style="margin: 20px; display:flex; justify-content: center; align-items: center; gap: 10px;" >
-          <a style="border: 1px solid blue; border-radius: 10px;  padding: 10px; color: white;" href="mailto:razakattar0221@gmail.com" target="_blank"><i class="fas fa-envelope"></i>
+        <div style="margin: 20px; display:flex; justify-content: center; align-items: center; gap: 10px;" >
+          <a  class="btn" href="mailto:razakattar0221@gmail.com" target="_blank"><i class="fas fa-envelope"></i>
             Email ME
           </a>
-          <a style="border: 1px solid blue; border-radius: 10px; text-align: center; padding: 10px; color: white; " href="tel:+9181238125271" target="_blank">
+          <a class="btn" href="tel:+9181238125271" target="_blank">
             <i class="fas fa-mobile-alt"></i> Call ME
           </a>
         </div>
       </div>
-      
-      <!-- <div class="contact-info">
-        <p>Email: razakat0221@gmail.com</p>
-        <p>Phone: +918123845567</p>
-        <h3>Follow Me</h3>
-        <div class="social-links">
-          <a href="https://github.com/razak571" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/razakattar/" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://discordapp.com/users/mern_dev/" target="_blank"><i class="fab fa-discord"></i></a>
-        </div>
-      </div> -->
-    </section>
+      </section>
+
+   
   </main>
 
   <footer>
-    <p>&copy; 2024 Abdulrazak Attar. All rights reserved.</p>
+   <div>
+    <p>&copy; 2024 Abdulrazak Attar</p>
+   </div>
   </footer>
   <script src="script.js"></script>
+  <div id="notification" class="notification">
+    <p id="notification-message"></p>
+  </div>
 </body>
-
 </html>

@@ -109,9 +109,6 @@ a {
   color: var(--secondary-color);
 }
 
-a:hover {
-  color: var(--primary-color);
-}
 
 #theme-toggle {
   background: none;
@@ -312,15 +309,30 @@ animation: 5s spin linear infinite;
 }
 
 .social-links a:hover {
-  color: var(--primary-color);
+  color: silver;
+}
+
+.btn {
+  border: 1px solid blue; 
+  border-radius: 10px;  
+  padding: 10px;
+   color: white; 
+   display: block;
+   text-align: center;
+}
+
+.btn:hover {
+  color: silver ;
+  border: 1px solid silver;
+  /* box-shadow: 0 1px 5px silver; */
 }
 
 footer {
-  background-color: var(--primary-color);
   color: #fff;
   text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
+  /* margin-right: 10px; */
+  
 }
 
 @media screen and (max-width: 768px) {
@@ -677,6 +689,12 @@ animation: 6s spin linear infinite;
   z-index: 1;
 }
 
+.cta-button:hover {
+  border: 2px solid silver;
+  color: silver;
+
+}
+
 @media screen and (max-width: 768px) {
   .about-container {
     flex-direction: column;
@@ -891,3 +909,22 @@ animation: 6s spin linear infinite;
 
 }
 
+
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  /* top: 100px; */
+  background-color: #fff;
+  color: blue;
+  padding: 15px;
+  border-radius: 5px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.notification.show {
+  display: block;
+  opacity: 1;
+}

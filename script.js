@@ -4,6 +4,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".nav-links li");
   // const themeToggle = document.getElementById("theme-toggle");
   const body = document.body;
+  const copyEmailBtn = document.getElementById("copyEmailBtn");
+
+  const copyEmailToClipboard = (event) => {
+    event.preventDefault();
+    const email = "razakattar0221@gmail.com";
+    navigator.clipboard
+      .writeText(email)
+      .then(() => showNotification("Email copied to clipboard!"))
+      .catch((err) => console.error("Failed to copy email: ", err));
+  };
+
+  function showNotification(message, isError = false) {
+    const notification = document.getElementById("notification");
+    const notificationMessage = document.getElementById("notification-message");
+
+    notificationMessage.textContent = message;
+    notification.style.backgroundColor = isError ? "#f44336" : "#fff";
+
+    notification.classList.add("show");
+
+    setTimeout(() => {
+      notification.classList.remove("show");
+    }, 3000);
+  }
+
+  if (copyEmailBtn) {
+    copyEmailBtn.addEventListener("click", copyEmailToClipboard);
+  }
 
   const toggleNav = () => {
     nav.classList.toggle("nav-active");
