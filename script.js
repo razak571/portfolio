@@ -274,4 +274,133 @@ document.addEventListener("DOMContentLoaded", () => {
           : item.querySelector(".timeline-details").scrollHeight + "px";
     });
   });
+
+  // hero section
+  const canvas = document.getElementById("particleCanvas");
+  if (canvas) {
+    const ctx = canvas.getContext("2d");
+    if (!ctx) {
+      console.error("Unable to get canvas context");
+      return;
+    }
+
+    const particleText = document.getElementById("particleText");
+    if (!particleText) {
+      console.error("Particle text element not found");
+      return;
+    }
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particles = [];
+    let textParticles = [];
+    const particleCount = 300;
+    const textParticleCount = 700;
+    let mouse = { x: null, y: null, radius: 100 };
+
+    class Particle {
+      constructor(x, y, size, color, weight) {
+        this.x = x;
+        this.y = y;
+        this.size = size;
+        this.color = color;
+        this.weight = weight;
+      }
+
+      draw(ctx) {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+
+      update() {
+        this.size -= 0.05;
+        if (this.size < 0) {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 3 + 1;
+          this.weight = Math.random() * 2 - 0.5;
+        }
+        this.y += this.weight;
+        this.weight += 0.0001;
+
+        if (this.y > canvas.height) {
+          this.weight *= -1;
+        }
+
+        if (mouse.x != null && mouse.y != null) {
+          let dx = this.x - mouse.x;
+          let dy = this.y - mouse.y;
+          let distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < mouse.radius) {
+            this.x += dx / 10;
+            this.y += dy / 10;
+          }
+        }
+      }
+    }
+
+    function init() {
+      particles = [];
+      for (let i = 0; i < particleCount; i++) {
+        let x = Math.random() * canvas.width;
+        let y = Math.random() * canvas.height;
+        let size = Math.random() * 3 + 1;
+        let color = "rgba(255,255,255," + (Math.random() * 0.7 + 0.3) + ")";
+        let weight = Math.random() * 2 - 0.5;
+        particles.push(new Particle(x, y, size, color, weight));
+      }
+
+      const textMetrics = ctx.measureText(particleText.textContent);
+      const textWidth = textMetrics.width;
+      const textHeight = parseInt(getComputedStyle(particleText).fontSize, 10);
+
+      textParticles = [];
+      for (let i = 0; i < textParticleCount; i++) {
+        let x = Math.random() * textWidth + (canvas.width - textWidth) / 2;
+        let y = Math.random() * textHeight + canvas.height / 2 - textHeight / 2;
+        let size = Math.random() * 2 + 1;
+        let color = "rgba(52, 152, 219," + (Math.random() * 0.7 + 0.3) + ")";
+        let weight = Math.random() * 2 - 0.5;
+        textParticles.push(new Particle(x, y, size, color, weight));
+      }
+    }
+
+    function animate() {
+      console.log("Animating");
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw(ctx);
+      }
+      for (let i = 0; i < textParticles.length; i++) {
+        textParticles[i].update();
+        textParticles[i].draw(ctx);
+      }
+      requestAnimationFrame(animate);
+    }
+
+    init();
+    animate();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      init();
+    });
+
+    canvas.addEventListener("mousemove", (event) => {
+      mouse.x = event.x;
+      mouse.y = event.y;
+    });
+
+    canvas.addEventListener("mouseout", () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+  } else {
+    console.error("Canvas element not found");
+  }
 });
