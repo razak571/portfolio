@@ -216,4 +216,62 @@ document.addEventListener("DOMContentLoaded", () => {
         card.addEventListener("mouseleave", handleHoverEnd);
       });
   }
+
+  // Testimonials animation
+  const testimonialsContainer = document.querySelector(
+    ".testimonials-container"
+  );
+  const testimonialsWrapper = document.querySelector(".testimonials-wrapper");
+  const testimonials = document.querySelectorAll(".testimonial");
+
+  if (testimonialsWrapper && testimonials.length > 0) {
+    const testimonialWidth =
+      testimonials[0].offsetWidth +
+      parseInt(getComputedStyle(testimonials[0]).marginRight);
+    const totalWidth = testimonialWidth * testimonials.length;
+
+    // Clone testimonials for seamless loop
+    testimonials.forEach((testimonial) => {
+      const clone = testimonial.cloneNode(true);
+      clone.classList.add("clone");
+      testimonialsWrapper.appendChild(clone);
+    });
+
+    // Set initial position to negative total width
+    testimonialsWrapper.style.transform = `translateX(${-totalWidth}px)`;
+
+    let position = -totalWidth;
+    let isHovered = false;
+
+    function animateTestimonials() {
+      if (!isHovered) {
+        position += 1; // Adjust this value to control speed
+        if (position >= 0) {
+          position = -totalWidth;
+        }
+        testimonialsWrapper.style.transform = `translateX(${position}px)`;
+      }
+      requestAnimationFrame(animateTestimonials);
+    }
+
+    animateTestimonials();
+
+    testimonialsContainer.addEventListener("mouseenter", () => {
+      isHovered = true;
+    });
+
+    testimonialsContainer.addEventListener("mouseleave", () => {
+      isHovered = false;
+    });
+  }
+
+  // dynamic work record
+  // document.querySelectorAll(".timeline-content").forEach((item) => {
+  //   item.addEventListener("click", () => {
+  //     item.querySelector(".timeline-details").style.maxHeight =
+  //       item.querySelector(".timeline-details").style.maxHeight
+  //         ? null
+  //         : item.querySelector(".timeline-details").scrollHeight + "px";
+  //   });
+  // });
 });
