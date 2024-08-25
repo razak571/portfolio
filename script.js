@@ -266,12 +266,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // dynamic work record
-  // document.querySelectorAll(".timeline-content").forEach((item) => {
-  //   item.addEventListener("click", () => {
-  //     item.querySelector(".timeline-details").style.maxHeight =
-  //       item.querySelector(".timeline-details").style.maxHeight
-  //         ? null
-  //         : item.querySelector(".timeline-details").scrollHeight + "px";
-  //   });
-  // });
+  document.querySelectorAll(".timeline-content").forEach((item) => {
+    item.addEventListener("click", () => {
+      item.querySelector(".timeline-details").style.maxHeight =
+        item.querySelector(".timeline-details").style.maxHeight
+          ? null
+          : item.querySelector(".timeline-details").scrollHeight + "px";
+    });
+  });
 });
