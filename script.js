@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = "razakattar0221@gmail.com";
     navigator.clipboard
       .writeText(email)
-      .then(() => showNotification("Email copied to clipboard!"))
+      .then(() => showNotification("Email Copied to Clipboard!"))
       .catch((err) => console.error("Failed to copy email: ", err));
   };
 
@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function animate() {
       if (!isHovered) {
-        position -= 1; // Adjust speed if necessary
+        position -= 1.1; // Adjust speed if necessary
         if (Math.abs(position) >= totalWidth) {
           position = 0;
         }
@@ -369,7 +369,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function animate() {
-      console.log("Animating");
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < particles.length; i++) {
         particles[i].update();
@@ -403,4 +402,246 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.error("Canvas element not found");
   }
+
+  // updated project section
+  const projects = document.querySelectorAll(".parallax-project");
+  const lastProject = projects[projects.length - 1];
+
+  // Image slideshow functionality
+  projects.forEach((project, index) => {
+    const images = project.querySelectorAll(".parallax-background img");
+    let currentImageIndex = 0;
+
+    const durations = [7000, 8000, 9000, 10000, 11000, 12000];
+    const duration = durations[index % durations.length];
+
+    const fadeImages = () => {
+      images[currentImageIndex].style.opacity = "0";
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      setTimeout(() => {
+        images[currentImageIndex].style.opacity = "1";
+      }, 500);
+    };
+
+    setInterval(fadeImages, duration);
+  });
+
+  // Read More functionality
+  const readMoreButtons = document.querySelectorAll(".read-more");
+  readMoreButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const content = button.closest(".parallax-content");
+      const shortDesc = content.querySelector(".short-description");
+      const fullDesc = content.querySelector(".full-description");
+
+      if (shortDesc.style.display !== "none") {
+        shortDesc.style.opacity = "0";
+        setTimeout(() => {
+          shortDesc.style.display = "none";
+          fullDesc.style.display = "block";
+          setTimeout(() => {
+            fullDesc.style.opacity = "1";
+          }, 50);
+        }, 300);
+        button.textContent = "Read Less";
+      } else {
+        fullDesc.style.opacity = "0";
+        setTimeout(() => {
+          fullDesc.style.display = "none";
+          shortDesc.style.display = "block";
+          setTimeout(() => {
+            shortDesc.style.opacity = "1";
+          }, 50);
+        }, 300);
+        button.textContent = "Read More";
+      }
+    });
+  });
+
+  // Parallax effect  extraa he added
+  // window.addEventListener("scroll", () => {
+  //   const scrollPosition = window.pageYOffset;
+
+  //   projects.forEach((project, index) => {
+  //     if (project !== lastProject) {
+  //       const background = project.querySelector(".parallax-background");
+  //       const speed = 0.5;
+  //       background.style.transform = `translateZ(-1px) scale(2) translateY(${
+  //         scrollPosition * speed
+  //       }px)`;
+  //     }
+  //   });
+  // });
+  // window.addEventListener("scroll", () => {
+  //   const scrollPosition = window.pageYOffset;
+
+  //   projects.forEach((project) => {
+  //     if (project !== lastProject) {
+  //       const background = project.querySelector(".parallax-background");
+  //       const content = project.querySelector(".parallax-content");
+  //       const speed = 0.5;
+  //       const yPos = -(scrollPosition - project.offsetTop) * speed;
+  //       background.style.transform = `translateY(${yPos}px)`;
+  //       content.style.transform = `translateY(${-yPos * 0.5}px)`;
+  //     }
+  //   });
+  // });
+
+  // Fade-in effect for project content
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1,
+  };
+
+  const observers = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  }, observerOptions);
+
+  projects.forEach((project) => {
+    const content = project.querySelector(".parallax-content");
+    content.style.opacity = "0";
+    content.style.transform = "translateY(50px)";
+    content.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    observers.observe(content);
+  });
+
+  // Special handling for the last project
+  // const lastProjectObserver = new IntersectionObserver(
+  //   (entries) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         const background = lastProject.querySelector(".parallax-background");
+  //         background.style.position = "fixed";
+  //         background.style.top = "0";
+  //       } else {
+  //         const background = lastProject.querySelector(".parallax-background");
+  //         background.style.position = "absolute";
+  //         background.style.top = "auto";
+  //       }
+  //     });
+  //   },
+  //   { threshold: 0.1 }
+  // );
+
+  // lastProjectObserver.observe(lastProject);
+
+  // chat gpt paralex project section
+  // const readMoreBtns = document.querySelectorAll(".read-more-btn");
+
+  // readMoreBtns.forEach((btn) => {
+  //   btn.addEventListener("click", (e) => {
+  //     const projectContent = e.target.closest(".parallax-content");
+  //     projectContent.classList.toggle("expanded");
+
+  //     if (projectContent.classList.contains("expanded")) {
+  //       btn.textContent = "Show Less";
+  //     } else {
+  //       btn.textContent = "Read More";
+  //     }
+  //   });
+  // });
+
+  // chat gpy 3rd idea for pro sec
+  // Carousel Configuration
+  const carousel = document.querySelector(".carousel");
+  const items = document.querySelectorAll(".carousel-item");
+  const prevBtn = document.querySelector(".carousel-prev");
+  const nextBtn = document.querySelector(".carousel-next");
+  const dots = document.querySelectorAll(".carousel-dots .dot");
+  let currentIndex = 0;
+  const totalItems = items.length;
+  let autoSlideInterval;
+
+  const carouselInterval = 7000; // Time in milliseconds for carousel change
+
+  // Update dots based on current index
+  function updateDots() {
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === currentIndex);
+    });
+  }
+
+  function updateCarousel() {
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    updateDots();
+  }
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalItems;
+      updateCarousel();
+    }, carouselInterval);
+  }
+
+  function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+  }
+
+  prevBtn.addEventListener("click", () => {
+    stopAutoSlide();
+    currentIndex = currentIndex === 0 ? totalItems - 1 : currentIndex - 1;
+    updateCarousel();
+    startAutoSlide();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    stopAutoSlide();
+    currentIndex = currentIndex === totalItems - 1 ? 0 : currentIndex + 1;
+    updateCarousel();
+    startAutoSlide();
+  });
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      stopAutoSlide();
+      currentIndex = index;
+      updateCarousel();
+      startAutoSlide();
+    });
+  });
+
+  // Project Image Carousel Configuration
+  document.querySelectorAll(".project-image-carousel").forEach((carousel) => {
+    const images = carousel.querySelectorAll("img");
+    let imgIndex = 0;
+    const totalImages = images.length;
+    const imageCarouselInterval = 4000; // Time in milliseconds for image change
+
+    // Start the image carousel
+    setInterval(() => {
+      images[imgIndex].classList.remove("active"); // Hide the current image
+      imgIndex = (imgIndex + 1) % totalImages; // Move to the next image
+      images[imgIndex].classList.add("active"); // Show the next image
+    }, imageCarouselInterval);
+  });
+
+  // Stop carousel auto-slide on flip card hover and resume on mouse leave
+  const flipCards = document.querySelectorAll(".flip-card");
+  flipCards.forEach((card) => {
+    card.addEventListener("mouseenter", stopAutoSlide);
+    card.addEventListener("mouseleave", startAutoSlide);
+  });
+
+  // Initialize the carousel
+  updateCarousel();
+  startAutoSlide();
+
+  // on click of read more btn card flips and when mouse leave that card flips back
+  // document.querySelectorAll(".read-more-btn-").forEach((button) => {
+  //   button.addEventListener("click", function () {
+  //     const flipCardInner = this.closest(".flip-card-inner");
+  //     flipCardInner.style.transform = "rotateY(180deg)";
+  //     flipCards.forEach((card) => {
+  //       card.addEventListener("mouseleave", () => {
+  //         flipCardInner.style.transform = "rotateY(0deg)";
+  //       });
+  //     });
+  //   });
+  // });
 });

@@ -183,22 +183,28 @@ h2 {
   transition: background-color 0.3s ease, transform 0.3s ease;
   position: relative;
   text-align: center;
+  /* top: 120px; */
 }
 
+.cta-button i, a {
+  margin-left: 8px; 
+  transition: transform 0.3s ease;
+}
 
+.cta-button:hover i, a {
+  transform: translateX(4px); 
+}
 
-
-
-
+/* .cta-hero {
+    top: 120px;
+} */
 
 .cta-button::after, .cta-button::before {
   content: '';
   position: absolute;
   height: 100%;
   width: 100%;
-
   background-image: conic-gradient(from  var(--angle),#fff, blue);
-
 top: 50%;
 left : 50%; translate: -50% -50%;
 z-index: -1;
@@ -222,11 +228,6 @@ animation: 5s spin linear infinite;
 
 }
 
-
-
-
-
-
 .skill-category {
   flex-basis: calc(33.333% - 20px);
   margin-bottom: 20px;
@@ -247,22 +248,38 @@ animation: 5s spin linear infinite;
 }
 
 .project-card {
-  background-color: var(--card-background);
+  background-color: #000;
   border-radius: 5px;
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  /* opacity: 0.8; */
 }
 
 .project-card:hover {
   transform: translateY(-5px);
 }
 
+/*  aa */
+
+
 .project-links a {
   display: inline-block;
-  margin-right: 10px;
-  color: var(--secondary-color);
+  color: var(--text-color);
   text-decoration: none;
+  background-color: var(--secondary-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  /* transition: all 0.3s ease; */
+  transition: color 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 .experience-item {
@@ -319,12 +336,15 @@ animation: 5s spin linear infinite;
    color: white; 
    display: block;
    text-align: center;
+  margin-left: -4px;
+  margin-right: 4px;
+
 }
 
 .btn:hover {
   color: silver ;
   border: 1px solid silver;
-  /* box-shadow: 0 1px 5px silver; */
+  box-shadow: 0 1px 5px silver;
 }
 
 footer {
@@ -332,7 +352,6 @@ footer {
   text-align: center;
   padding: 1rem;
   /* margin-right: 10px; */
-  
 }
 
 @media screen and (max-width: 768px) {
@@ -387,9 +406,7 @@ footer {
     transform: rotate(45deg) translate(-5px, -6px);
   }
 
-  .skills-container {
-    flex-direction: column;
-  }
+
 
   .skill-category {
     flex-basis: 100%;
@@ -453,13 +470,13 @@ footer {
 
 .blog-card {
   flex: 0 0 300px;
-  background-color: var(--card-background);
+  background-color: #000;
   border-radius: 10px;
   margin-right: 20px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-  opacity: 0.5;
+  opacity: 0.5; 
   /* Start with colorless cards */
 }
 
@@ -506,15 +523,15 @@ footer {
 }
 
 /* Skills Section */
-
 .skills-container {
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; */
   overflow: hidden;
-  /* Hide overflow for the card wrapper */
   position: relative;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between;  */
+  /* flex-direction: column; */
   /* Ensure correct positioning of child elements */
+  /* Hide overflow for the card wrapper */
 }
 
 .skill-grid {
@@ -571,9 +588,7 @@ footer {
   }
 }
 
-
 /* updated about */
-
 #about {
   padding: 4rem 0;
   position: relative;
@@ -619,8 +634,6 @@ footer {
 
 }
 
-
-
 .info-item {
   margin-right: 5px;
   margin-left: 5px;
@@ -636,7 +649,7 @@ footer {
 .info-item:hover {
   /* transform: translateY(-5px); */
   cursor: pointer;
-  box-shadow: 0 6px 12px silver;
+  box-shadow: 0 6px 12px silver;  
 }
 
 .info-item img {
@@ -670,7 +683,7 @@ animation: 6s spin linear infinite;
 
 .info-item::before{
   filter: blur(1.5rem);
-  opacity: 0.2;
+  opacity: 0.1;
 }
 
 @keyframes spin {
@@ -680,9 +693,7 @@ animation: 6s spin linear infinite;
   to{
     --angle: 360deg;
   }
-
 }
-
 
 .cta-button {
   position: relative;
@@ -692,7 +703,6 @@ animation: 6s spin linear infinite;
 .cta-button:hover {
   border: 2px solid silver;
   color: silver;
-
 }
 
 @media screen and (max-width: 768px) {
@@ -822,7 +832,6 @@ animation: 3s spin linear infinite;
   }
 }
 
-
 .info-item-person {
   margin-right: 5px;
   margin-left: 5px;
@@ -848,7 +857,6 @@ animation: 3s spin linear infinite;
   margin-bottom: 10px;
 }
 
-
 .info-item-person h3 {
   margin-bottom: 5px;
 }
@@ -857,14 +865,11 @@ animation: 3s spin linear infinite;
   margin: 0;
 }
 
-
-
 .info-item-person::after, .info-item-person::before {
   content: '';
   position: absolute;
   height: 100%;
   width: 100%;
-
 
   /* background-image: conic-gradient(from var(--angle), transparent 85%, #3498db); */
 
@@ -874,8 +879,6 @@ animation: 3s spin linear infinite;
 
   /* background-image: conic-gradient(from  calc(var(--angle) + var(--start-angle)),  transparent,#3498db); */
 
-
-
   /* background-image: conic-gradient(from calc(var(--angle) + var(--start-angle)), transparent 95%, #fff, #3498db); */
 
  /* background-image:  conic-gradient(from var(--angle), 
@@ -883,7 +886,6 @@ animation: 3s spin linear infinite;
 
  /* background-image:  conic-gradient(from var(--angle), 
   #ff4545, #00ff99, #006aff, #ff0095, #ff4545); */
-
 
   top: 50%;
   left : 50%;
@@ -896,7 +898,7 @@ animation: 6s spin linear infinite;
 
 .info-item-person::before{
   filter: blur(1.5rem);
-  opacity: 0.2;
+  opacity: 0.1;
 }
 
 @keyframes spin {
@@ -906,9 +908,7 @@ animation: 6s spin linear infinite;
   to{
     --angle: 360deg;
   }
-
 }
-
 
 .notification {
   position: fixed;
@@ -927,7 +927,6 @@ animation: 6s spin linear infinite;
   display: block;
   opacity: 1;
 }
-
 
 .testimonials-container {
   overflow: hidden;
@@ -1040,13 +1039,10 @@ animation: 6s spin linear infinite;
   }
 }
 
-
 /* .testimonial::before {
   filter: blur(1.5rem);
   opacity: 0.8;
 } */
-
-
 
 /* dynamic work record */
 .work-record-timeline {
@@ -1118,10 +1114,15 @@ animation: 6s spin linear infinite;
 
 .timeline-content {
   padding: 20px 30px;
-  background-color: #1c1f2b;
+  background-color: #000;
   position: relative;
   border-radius: 6px;
   transition: all 0.3s ease;
+}
+
+.timeline-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
 .timeline-content::after {
@@ -1193,10 +1194,9 @@ animation: 6s spin linear infinite;
   }
 }
 
-
-
 /* scrollbar */
 /* Webkit browsers (Chrome, Safari) */
+/* Vertical scrollbar styles (your existing code) */
 ::-webkit-scrollbar {
   width: 3px;
 }
@@ -1214,20 +1214,46 @@ animation: 6s spin linear infinite;
   background: linear-gradient(45deg, orangered, orangered);
 }
 
-/* Firefox */
+/* Horizontal scrollbar styles */
+::-webkit-scrollbar:horizontal {
+  height: 3px; /* Adjust this value to change the height of the horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track:horizontal {
+  background: #1c1f2b;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: linear-gradient(to right, #3498db, #2980b9);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
+  background: linear-gradient(to right, orangered, orangered);
+}
+
+
+
+
+
+
+/* Firefox (for both vertical and horizontal) */
 /* * {
   scrollbar-width: thin;
   scrollbar-color: #3498db #1c1f2b;
 } */
 
-
-/* // updated hero section */
-#hero {
+/* updated hero section */
+ #hero {
   position: relative;
   height: 100vh;
   overflow: hidden;
   background-color: #04071d;
   margin-bottom: -40px;
+}
+
+#hero:hover {
+  cursor: grab;
 }
 
 #particleCanvas {
@@ -1245,31 +1271,737 @@ animation: 6s spin linear infinite;
   text-align: center;
   padding: 4rem 0;
   color: #fff;
-  /* margin-bottom: 1000px; */
 }
 
 .hero-content h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   margin-bottom: 1rem;
   color: #3498db;
 }
 
 .hero-content p {
   font-size: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
-
-/* .cta-button {
-  display: inline-block;
-  background-color: #3498db;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-} */
 
 .cta-button:hover {
   background-color: #2980b9;
   transform: scale(1.05);
+} 
+
+/* updated project section */
+.parallax-container {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+   /* scroll-snap-type: y mandatory;
+  border: 1px solid white; */
+}
+ 
+.parallax-project {
+  position: relative;
+  height: 100vh; /* Increased from 100vh to show more of the image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  /* scroll-snap-align: start; */
+}
+
+.parallax-background {
+  position: absolute;
+  top: 0; /* Adjusted to show more of the top from 0 */
+  left: 0;
+  right: 0;
+   bottom: 0;  
+  /* transform: translateZ(-1px) scale(2); */
+transform: translateZ(-1px) scale(2); /*Adjusted scale for more visibility*/
+}
+
+.parallax-background img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+/* for multiple image */
+.parallax-background img:first-child {
+  opacity: 1;
+}
+
+.parallax-content {
+  background-color: rgba(52, 73, 110, 0.8);
+  padding: 2.5rem;
+  border-radius: 15px;
+  /* transform: translateY(50px); */
+  transform: translateZ(0);
+  max-width: 70%;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* transition: opacity 0.5s ease, transform 0.5s ease; */
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.parallax-content p {
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.project-links {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+  /* flex-direction: row; */
+  align-items: center;
+}
+
+.project-links a:hover {
+  /* text-decoration: underline; */
+  background-color: #3498db;
+  /* transform: translateY(-3px); */
+  box-shadow: 0 1px 2px #fff;
+  color: var(--primary-color);
+}
+
+.read-more {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 1.5rem auto;
+  display: block;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.read-more:hover {
+  background-color: #3498db;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.parallax-project:last-child {
+  height: auto;
+  min-height: 100vh;
+}
+
+.parallax-project:last-child .parallax-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: none;
+}
+
+/* .parallax-content:hover {
+  transform: translateZ(0) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  color: red;
+  background-color: green;
+} */
+
+.parallax-content h3 {
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+} 
+
+/* Custom scrollbar styles */
+.parallax-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.parallax-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+
+}
+
+.parallax-container::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 5px;
+}
+
+.parallax-container::-webkit-scrollbar-thumb:hover {
+  background: orangered;
+}
+
+@media (max-width: 768px) {
+  .parallax-content {
+    max-width: 90%;
+    padding: 2rem;
+  }
+  
+
+  
+
+
+  .parallax-content h3 {
+    font-size: 1.75rem;
+  }
+
+  .parallax-content p {
+    font-size: 1rem;
+  }
+}
+
+
+/* chatgpt paralex */
+/* Parallax Section Styles */
+.project-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.project {
+  position: relative;
+  min-height: 80vh; /* Adjust as needed */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-content {
+  position: relative;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  color: var(--text-color);
+  max-width: 70%; /* Ensures text isn't too wide */
+  text-align: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+/* 
+.project-content h2 {
+  color: var(--heading-color);
+  margin-bottom: 10px;
+} */
+
+.project-content p {
+  margin-bottom: 20px;
+}
+
+.links a, .read-more-btn {
+  margin-right: 10px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.links a:hover, .read-more-btn:hover {
+  color: var(--secondary-color);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .project-content {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-content {
+    max-width: 95%;
+  }
+}
+
+
+.project-content.expanded p {
+  max-height: none;
+  overflow: visible;
+}
+
+.project-content p {
+  max-height: 40px; /* Display only 2 lines initially */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: max-height 0.3s ease;
+}
+
+.project-content.expanded {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* chat paralex secod try */
+/* Parallax Section Styles */
+.project-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.project {
+  position: relative;
+  min-height: 80vh;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1px; /* Key for parallax effect */
+  overflow: hidden;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.layer-background {
+  transform: translateZ(-2px) scale(3); /* Slowest movement, gives deep background */
+}
+
+.layer-midground {
+  transform: translateZ(-1px) scale(2); /* Middle movement */
+  background-color: rgba(0, 0, 0, 0.2); /* Optional, can be an image or a color */
+}
+
+.layer-foreground {
+  transform: translateZ(0px) scale(1); /* Foreground, normal movement */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10; /* Bring it above other layers */
+}
+
+.project-content {
+  position: relative;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  color: var(--text-color);
+  max-width: 60%; /* Ensures text isn't too wide */
+  text-align: center;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.project-content h2 {
+  color: var(--heading-color);
+  margin-bottom: 10px;
+}
+
+.project-content p.project-description {
+  max-height: 40px; /* Show only 2 lines initially */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: max-height 0.3s ease;
+}
+
+.project-content.expanded p.project-description {
+  max-height: none;
+  white-space: normal;
+}
+
+.links a, .read-more-btn {
+  margin-right: 10px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.links a:hover, .read-more-btn:hover {
+  color: var(--secondary-color);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .project-content {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-content {
+    max-width: 95%;
+  }
+}
+
+
+/* 3rd try chatgpt */
+/* Basic Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.project {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150%; /* Extra height to maintain the parallax effect */
+  background-size: cover;
+  background-attachment: fixed; /* Key for the parallax effect */
+  background-position: center;
+  z-index: -1; /* Behind the content */
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 1; /* In front of the background */
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  color: var(--text-color);
+  max-width: 60%;
+  text-align: center;
+}
+
+.parallax-content h2 {
+  color: var(--heading-color);
+  margin-bottom: 10px;
+}
+
+.parallax-content p.project-description {
+  max-height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: max-height 0.3s ease;
+}
+
+.parallax-content.expanded p.project-description {
+  max-height: none;
+  white-space: normal;
+}
+
+.links a, .read-more-btn {
+  margin-right: 10px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.links a:hover, .read-more-btn:hover {
+  color: var(--secondary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .parallax-content {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .parallax-content {
+    max-width: 95%;
+  }
+}
+
+/*  1. Interactive Carousel with Flipping Cards chat gpt */
+/* Carousel Container */
+.carousel-container {
+  position: relative;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel-item {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Flipping Card Styles */
+.flip-card {
+  width: 320px;
+  height: 420px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  /* text-align: center; */
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+}
+
+.flip-card-front {
+  background: #000;
+  color: black;
+}
+
+.flip-card-back {
+  background: #000;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Project Image Carousel */
+.project-image-carousel {
+  position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    /* Center images vertically */
+    justify-content: center;
+}
+
+.project-image-carousel img {
+  position: absolute;
+  width: 100%;
+  height: 200%;
+  height: auto; 
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.project-image-carousel img.active {
+  opacity: 1;
+}
+
+/* Carousel Navigation */
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 18px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  background-color: #007BFF;
+}
+
+/* Dots Navigation */
+.carousel-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 5px;
+  background-color: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #007BFF;
+}
+
+.flip-card-back p {
+  padding: 20px 20px 0px 20px;
+  text-align: justify;
+}
+
+.flip-card-back h1 {
+  margin-top:  0px;
+  padding: 0px;
+  border-bottom: 1px solid blue;
+  border-width: thick;
+}
+
+.tech-badge {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+/* Carousel Navigation */
+.carousel-prev, .carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: #bbb; 
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .flip-card {
+    width: 250px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flip-card {
+    width: 200px;
+    height: 300px;
+  }
+}
+
+.carousel-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0px 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-dots .dot.active {
+  background-color: var(--secondary-color);
+}
+
+/* enhancements */
+/* Flip Card Styles */
+
+.flip-card-front h1  {
+  font-size: 1.8rem;
+  margin: 10px 0px;
+}
+
+.flip-card-front img {
+  width:100%;
+  height: 100%;
+  /* border-radius: 15px; */
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Tech Stack Styles */
+.tech-stack {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tech-stack .badge {
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 25px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e0e0;
+  transition: transform 0.2s;
+}
+
+.tech-stack .badge:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.badge-mongo {
+  color: #4DB33D;
+}
+
+.badge-express {
+  color: #333333;
+}
+
+.badge-react {
+  color: #61DAFB;
+}
+
+.badge-node {
+  color: #68A063;
+}
+
+/* Hover effect for the tech stack badges */
+.badge:hover {
+  opacity: 0.8;
+}
+
+.project-details {
+  /* position: relative; */
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+  z-index: 100;
 }
