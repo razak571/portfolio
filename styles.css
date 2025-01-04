@@ -2040,4 +2040,26 @@ body, html {
  .carousel-next {
   margin-right:  -25px;
  }
+ .skill-card img{
+  filter: grayscale(0%);
+ }
+
+ .skill-card h4 {
+  font-size: smaller;
+ }
+
+ .blog-card {
+  opacity: 1;
+}
+
+.blog-card img {
+  filter: grayscale(0%);
+  width: 100%;
+}
+
+.blog-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
 }
