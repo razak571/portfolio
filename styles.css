@@ -1999,9 +1999,45 @@ body, html {
 }
 
 .project-details {
-  /* position: relative; */
+  position: relative;
   padding: 10px;
   margin: 5px;
   border-radius: 10px;
   z-index: 100;
+}
+
+@media(max-width: 380px) {
+  #particleText {
+    font-size:  30px;
+  }
+  #hero > div > p {
+    font-size: 20px;
+  }
+  #experience > div.work-record-timeline {
+    margin: 10px;
+  }
+  
+ .timeline-content {
+  padding: 10px;
+  width:  70%;
+ }
+ #contact > div {
+  width: 70%;
+
+ }
+ .btn{
+  height:  auto;
+  width:  90%;
+  font-size:  10px;
+ }
+ .flip-card {
+  width: 100%;
+  margin: 10px;
+ }
+ .carousel-prev {
+    margin-left:  -25px;
+ }
+ .carousel-next {
+  margin-right:  -25px;
+ }
 }
